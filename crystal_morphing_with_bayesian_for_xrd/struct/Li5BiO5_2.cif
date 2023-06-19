@@ -1,0 +1,37 @@
+# generated using pymatgen
+data_Li5BiO5
+_symmetry_space_group_name_H-M   'P 1'
+_cell_length_a   5.11290411
+_cell_length_b   5.97517797
+_cell_length_c   4.33401875
+_cell_angle_alpha   87.23021954
+_cell_angle_beta   110.89284414
+_cell_angle_gamma   92.52923570
+_symmetry_Int_Tables_number   1
+_chemical_formula_structural   Li5BiO5
+_chemical_formula_sum   'Li5 Bi1 O5'
+_cell_volume   123.50479114
+_cell_formula_units_Z   1
+loop_
+ _symmetry_equiv_pos_site_id
+ _symmetry_equiv_pos_as_xyz
+  1  'x, y, z'
+loop_
+ _atom_site_type_symbol
+ _atom_site_label
+ _atom_site_symmetry_multiplicity
+ _atom_site_fract_x
+ _atom_site_fract_y
+ _atom_site_fract_z
+ _atom_site_occupancy
+  Li  Li0  1  0.20041648  0.22937331  0.91328164  1.0
+  Li  Li1  1  0.99631900  0.56199831  0.66618858  1.0
+  Li  Li2  1  0.57742315  0.54126874  0.19363194  1.0
+  Li  Li3  1  0.41015022  0.79174640  0.62567529  1.0
+  Li  Li4  1  0.45202410  0.29286854  0.60085903  1.0
+  Bi  Bi5  1  0.79413530  0.04365699  0.28128697  1.0
+  O  O6  1  0.16983888  0.06378787  0.26861539  1.0
+  O  O7  1  0.34690624  0.51009138  0.79731720  1.0
+  O  O8  1  0.73121480  0.76405184  0.50401879  1.0
+  O  O9  1  0.77409383  0.31409274  0.51402483  1.0
+  O  O10  1  0.47292660  0.04628583  0.87092487  1.0

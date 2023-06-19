@@ -1,0 +1,27 @@
+### structures ###
+target,struct/Li5BiO5.csv
+input_struct1,struct/Li5BiO5_2.cif
+input_struct2,struct/Li5BiO5_1.cif,struct/Li5BiO5_3.cif
+
+
+### bayesian parameter ###
+num_init_data,2
+num_core,4
+num_iter,4
+initial_step_boolean,True
+random_seed,99
+
+### soap parameter ###
+soap_max_steps,15
+multi_species,True
+
+### structure selection ###
+structure_selection_pair,Limited
+
+### xrd paprameter ####
+xray_wavelength,CuKa
+xrd_sigma,0.5
+volume_list,0.80,0.82,0.85,0.87,0.90,0.92,0.94,0.96,0.97,0.98,0.99,1.00,1.01,1.02,1.03,1.04,1.06,1.08,1.10,1.15,1.17,1.20
+
+### gsas use ###
+bool_gsas,True

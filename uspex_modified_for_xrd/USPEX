@@ -1,0 +1,140 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""
+USPEX 9.4.4 release
+2015 Oganov's Lab. All rights reserved.
+"""
+
+import os
+import sys
+import distutils.core
+from optparse import OptionParser
+
+from lib.uspex_help import uspex_help
+from lib.uspex_examples import uspex_examples, uspex_copy, copy_submission
+from lib.uspex_vars import uspex_vars
+
+
+# -------------------------------- Options --------------------------------------
+def optional_arg(arg_default):
+    def func(option, opt_str, value, parser):
+        if parser.rargs and not parser.rargs[0].startswith('-'):
+            val = parser.rargs[0]
+            parser.rargs.pop(0)
+        else:
+            val = arg_default
+        setattr(parser.values, option.dest, val)
+
+    return func
+
+
+usage = "usage: %prog OPTIONS"
+parser = OptionParser(usage=usage)
+parser.add_option("-v", "--version", dest="version", action="store_true",
+                  help="show program's version number and exit", metavar="VERSION")
+
+parser.add_option("-p", "--parameter", action='callback', callback=optional_arg('all'), dest="parm",
+                  help="specify parameter to get help. If no value or 'all' value is specified, all INPUT.txt parameters will be shown",
+                  metavar="PARM")
+
+parser.add_option("-e", "--example", action='callback', callback=optional_arg('all'), dest="example",
+                  help="show USPEX example details. If no value or 'all' value is specified, all examples will be shown",
+                  metavar="NUM")
+
+parser.add_option("-c", "--copy", dest="copy",
+                  help="copy the INPUT.txt file and Specific Folder of ExampleXX.", metavar="NUM")
+
+parser.add_option("-g", "--generate", dest="generate", action="store_true",
+                  help="generate directories for preparing an USPEX calculation, including AntiSeeds, Seeds, Specific, Submission folders")
+
+parser.add_option("-r", "--run", dest="uspex_run", action="store_true",
+                  help="run USPEX calculation", metavar="RUN")
+
+parser.add_option("-o", "--octave", dest="uspex_octave", action="store_true",
+                  help="run USPEX calculation with Octave instead of Matlab", metavar="RUN")
+
+parser.add_option("--clean", dest="uspex_clean", action="store_true",
+                  help="clean calculation folder", metavar="CLEAN")
+
+(options, args) = parser.parse_args()
+
+parm = ''
+example = ''
+
+uspex_var = 'USPEXPATH'
+if not uspex_vars(uspex_var):  # Returns None value if the variable is set.
+    uspexpath = os.environ[uspex_var]
+else:
+    print (uspex_vars(uspex_var))   # modified on 210414
+    sys.exit(1)
+
+if len(sys.argv) == 1:
+    parser.print_help()
+
+if options.version:
+    parser.print_version()
+    if os.path.exists(uspexpath + '/FunctionFolder/VERSION'):
+        f = open(uspexpath + '/FunctionFolder/VERSION', 'rb')
+        version_content = f.readlines()
+        f.close()
+        version = ''
+        if version_content:
+            version = version_content[0].strip()
+        print ('\n  USPEX %s\n' % (version))   # modified on 210414
+    sys.exit(0)
+
+if options.parm:
+    parm = options.parm
+    uspex_help(parm)
+    sys.exit(0)
+
+if options.example:
+    example = options.example
+    uspex_examples(example)
+    sys.exit(0)
+
+if options.copy:
+    copy = options.copy
+    uspex_copy(copy)
+    sys.exit(0)
+
+if options.uspex_clean:
+    result = os.system('%s/clean' % (uspexpath))
+    sys.exit(0)
+
+if options.generate:
+    # Copy Submission dir from USPEXPATH to run dir:
+    copy_submission()
+
+    gen_dirs = [
+        'AntiSeeds',
+        'Seeds',
+        'Specific',
+    ]
+    for gen_dir in gen_dirs:
+        if not os.path.isdir(gen_dir):
+            os.mkdir(gen_dir)
+            print ('\t' + gen_dir + ' dir was created.')   # modified on 210414
+        else:
+            print ('\t' + gen_dir + ' dir already exists.')   # modified on 210414
+    sys.exit(0)
+
+
+# -------------------------------------------------------------------------------
+
+
+'''
+matlabpath= os.environ['MATLABPATH']
+octavepath= os.environ['OCTAVEPATH']
+'''
+
+if options.uspex_run:
+    copy_submission()
+    if options.uspex_octave:
+        octave_option='-q --traditional'   # modified for previous octave on 210414
+        result = os.system('export UsPeXmOdE=exe && octave < %s/USPEX.m ' % (uspexpath))
+    else:
+        result = os.system('export UsPeXmOdE=exe && matlab -nodisplay -nodesktop < %s/USPEX.m ' % (uspexpath))
+
+    sys.exit(0)

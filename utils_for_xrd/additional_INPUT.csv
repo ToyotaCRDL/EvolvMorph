@@ -1,0 +1,9 @@
+### xrd paprameter ####
+xray_wavelength,CuKa
+xrd_2theta_min,0
+xrd_2theta_max,180
+d_2theta,0.01
+xrd_sigma,0.5
+
+### gsas use ###
+bool_gsas,True

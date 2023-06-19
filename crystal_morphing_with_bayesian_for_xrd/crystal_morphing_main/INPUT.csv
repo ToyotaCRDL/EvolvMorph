@@ -1,0 +1,8 @@
+### structures ###
+struct1,./examination/MgO_1.cif
+struct2,./examination/MgO_2.cif
+
+### soap parameter ###
+soap_max_steps,20
+multi_species,True
+
