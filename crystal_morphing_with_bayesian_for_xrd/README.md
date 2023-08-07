@@ -1,6 +1,6 @@
 # Crystal morphing with Bayesian for reproducing XRD
 
-(Last update: June 19th, 2023)  
+(Last update: August 7, 2023)  
 - Project researchers in Toyota Central R&D Lab. Inc.: Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita. <br>
 
 Create intermediate structures by crystal morphing to increase their XRD similarity of vs. target based on Bayesian optimiation. <br>
@@ -76,7 +76,7 @@ If you find it useful to use this program in your research, please cite the foll
 
 - Evolv&Morph
 ```
-Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, submitted., preprint arXiv 2302.10464 (2023).
+Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, npj Computational Materials, 9, 135 (2023).
 ```
 When accepted, the reference will be changed into an accepted journal.
 
