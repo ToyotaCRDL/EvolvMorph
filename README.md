@@ -193,7 +193,7 @@ If you find it useful to use this program in your research, please cite the foll
 
 - Evolv&Morph 
 ```
-Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, npj Computational Materials, 9, 135 (2023).
+Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, npj Computational Materials, 9, 135 (2023). 
 ```
 When accepted, the reference will be changed into an accepted journal.
 
