@@ -1,5 +1,5 @@
 # Evolv&Morph
-(Last update : June 19, 2023)
+(Last update : August 07, 2023)
 - Project researchers in Toyota Central R&D Labs., Inc. : Joohwi Lee, Junpei Oba, Nobuko Ohba, and  Seiji Kajita.
  
 Evolv&Morph is a useful inverse design scheme. <br>
@@ -193,7 +193,7 @@ If you find it useful to use this program in your research, please cite the foll
 
 - Evolv&Morph 
 ```
-Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, submitted., preprint arXiv 2302.10464 (2023).
+Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, npj Computational Materials, 9, 135 (2023).
 ```
 When accepted, the reference will be changed into an accepted journal.
 
