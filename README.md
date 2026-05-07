@@ -195,7 +195,6 @@ If you find it useful to use this program in your research, please cite the foll
 ```
 Joohwi Lee, Junpei Oba, Nobuko Ohba, and Seiji Kajita, npj Computational Materials, 9, 135 (2023). 
 ```
-When accepted, the reference will be changed into an accepted journal.
 
 - Crystal Morphing
 ```
